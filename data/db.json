@@ -1,0 +1,128 @@
+[
+    {
+        "id":"1",
+        "title":"BBUBBU",
+        "category":"WEBSITE",
+        "thumbnail":"/img/work/work1.png",
+        "banner":"/img/work/banner01.png",
+        "video":"/img/work/bbubbu.mp4",
+        "introduction":"결혼을 준비중인 예비부부들이 고민을 나눌 수 있는 커뮤니티 입니다.",
+        "github":"https://github.com/bbubbuC/bbubbu",
+        "icon":["/img/work/next.png","/img/work/fabric.png","/img/work/context.png","/img/work/mysql.png","/img/work/db.png","/img/work/sass.png","/img/work/vercel.png","/img/work/sweet.png"],
+        "dataD":[
+            {"number":["01","02","03","04"]},
+            {"subheading":["canvas로 이미지 꾸미기","좋아요","CRUD","OpenWeatherMap API"]},
+            {"detail":["","","mysql,","OpenWeatherMap API를 사용해 현재 날씨정보를 제공하였습니다."]}
+        ],
+        "before":"7",
+        "next":"2"
+    },
+    {
+        "id":"2",
+        "title":"이RUN 저RUN",
+        "category":"WEBSITE (RESPONSIVE)",
+        "thumbnail":"/img/work/work2.png",
+        "banner":"/img/work/banner02.png",
+        "video":"/img/work/erunjrun.mp4",
+        "introduction":"함께 달릴 사람을 모집하고, 내가 뛰어본 코스를 다른 사람과 공유 할 수 있는 서비스 입니다.",
+        "github":"https://github.com/ErunJrun/ErunJrun_FE",
+        "icon":["/img/work/react.png","/img/work/redux.png","/img/work/aws.png","/img/work/action.png","/img/work/io.png","/img/work/kakao.png","/img/work/sc.png","/img/work/sweet.png"],
+        "dataD":[
+            {"number":["01","02","03","04","05"]},
+            {"subheading":["레이지 로딩","문자 알람 서비스","출석체크 / 호스트평가","소개 모달","CI/CD 자동배포"]},
+            {"detail":["전체 게시글을 조회할 때 고화질의 이미지가 많이 사용되다보니 속도가 저하되는 문제가 발생하였습니다. 이 문제를 해결하기 위해 이미지를 리사이징하고 레이지 로딩을 적용시켜 속도 저하문제를 해결하였습니다.","그룹 러닝 완료 후 바로 체크해야 하는 출석체크 기능을 검색해서 들어가야 하는 번거로움이 있어, 사용자의 편의성을 높이기 위해 (출석체크, 호스트평가) 페이지로 바로 이동할 수 있는 문자 서비스 기능 추가하였습니다.","그룹러닝 완료후에 호스트는 참석자의 출석 여부를, 참석자들은 호스트평가를 진행하는데 참석을 하거나 좋은 평가를 받으면 매너점수가 올라가고, 불참하거나 좋지 않은 평가를 받으면 매너점수가 내려갑니다. ","1차 배포 후 서비스에 대한 가이드가 부족하다는 피드백을 받고 소개모달을 제작하여 재 배포 하였습니다.","Github Actions을 활용하여 원격 레포지토리로 푸쉬하고 난 후 자동으로 빌드 및 배포가 되도록 하였습니다."]}
+        ],
+        "before":"1",
+        "next":"3"
+    },
+    {
+        "id":"3",
+        "title":"CHEF LEE",
+        "category":"MOBILE",
+        "thumbnail":"/img/work/work3.png",
+        "banner":"/img/work/banner03.png",
+        "video":"/img/work/chefLee.mp4",
+        "introduction":"재료를 검색해서 레시피를 추천받고 냉장고 속 재료들을 직접 입력해서 관리 할 수 있습니다.",
+        "github":"https://github.com/Daun1309/recipe",
+        "icon":["/img/work/html.png","/img/work/js.png","/img/work/sass.png","/img/work/firebase.png"],
+        "dataD":[
+            {"number":["01","02","03","04"]},
+            {"subheading":["open api","firebase를 사용한 구글로그인 / CRUD","정규식","자동검색"]},
+            { "detail":["식품의약품안전처에서 제공하는 조리식품의 레시피DB라는 api를 사용하였습니다.","firebase db, firebase auth 를 사용하여 CRUD와 구글 아이디로 로그인이 가능하도록 구현하였습니다.","json으로 받아온 데이터들의 레시피 마다 작성 방법이나 문자 배열이 달랐고, 특수기호가 들어간것들도 있었으며, 프로젝트에서 사용하지 않는 정보들이 있었습니다. 서버에 부하가 일어나지 않기 위해, 사용하는 데이터만 최소화 하여 가져오고 또한 정규식을 사용하여 문자들의 균일화를 해서 다듬은 데이터들을 변수로 담아 프로젝트 전역에서 사용하였습니다.","파라미터를 통해 각 버튼을 클릭하여 해당 음식의 조리법, 해당 음식의 재료를 살 수 있는 페이지로 이동되도록 하였습니다."]}
+        ],
+        "before":"2",
+        "next":"4"
+    },
+    {
+        "id":"4",
+        "title":"안중근의사 기념관",
+        "category":"WEBSITE (RESPONSIVE)",
+        "thumbnail":"/img/work/work4.png",
+        "banner":"/img/work/banner04.png",
+        "video":"/img/work/anjg.mp4",
+        "introduction":"안중근의사기념관 홈페이지를 리뉴얼하였습니다.",
+        "github":"https://github.com/renewalP/renewal_p",
+        "icon":["/img/work/html.png","/img/work/js.png","/img/work/sass.png","/img/work/sweet.png"],
+        "dataD":[
+            {"number":["01","02"]},
+            {"subheading":["svg 스크롤이벤트","반응형"]},
+            {"detail":["안중근의사의 생애 페이지에 안중근의사와 관련된 일러스트를 svg로 저장해서 스크롤 시에 스크롤 값만큼 선이 화면에 그려도록 이벤트를 추가하였습니다. ","미디어 쿼리를 사용해서 웹과 태블릿, 모바일 환경까지 반응형 작업을 하였습니다."]}
+        ],
+        "before":"3",
+        "next":"5"
+    },
+    {
+        "id":"5",
+        "title":"WEBLING",
+        "category":"CLONE (RESPONSIVE)",
+        "thumbnail":"/img/work/work5.png",
+        "banner":"/img/work/banner05.png",
+        "video":"/img/work/webilng.mp4",
+        "introduction":"webling 홈페이지를 html,css,JS를 사용해 클론코딩하였습니다.",
+        "github":"https://github.com/Daun1309/webling",
+        "icon":["/img/work/html.png","/img/work/js.png","/img/work/sass.png"],
+        "dataD":[
+            {"number":["01"]},
+            {"subheading":["스크롤이벤트"]},
+            {"detail":["가로스크롤, 헤더가 아래로 스크롤시에는 숨겨졌다가 위로 스크롤을 하면 다시 보이는 스크롤이벤트, 스크롤시에 실행되는 애니메이션등 여러 스트롤 이벤트를 JS로 클론코딩 하였습니다."]}
+        ],
+        "before":"4",
+        "next":"6"
+    },
+    {
+        "id":"6",
+        "title":"TWITTER",
+        "category":"CLONE",
+        "thumbnail":"/img/work/work6.png",
+        "banner":"/img/work/banner06.png",
+        "video":"/img/work/erunjrun.mp4",
+        "introduction":"React, Redux를 사용해 클론코딩 하였습니다.",
+        "github":"https://github.com/twit-twit/front-end",
+        "icon":["/img/work/react.png","/img/work/redux.png","/img/work/sc.png"],
+        "dataD":[
+            {"number":["01","02"]},
+            {"subheading":["CRUD","Redux를 사용하여 props 복잡도 개선"]},
+            {"detail":["게시글을 작성, 출력, 수정, 삭제 할 수 있도록 CRUD 기능을 구현하였습니다.","페이지는 적었지만 한 페이지 안에 컴포넌트의 수가 많아서 props가 복잡하게 사용됐고 상태관리의 필요성을 느껴서 상태관리 라이브러리 중 Redux를 사용하여 props 복잡도를 개선하였습니다."]}
+        ],
+        "before":"5",
+        "next":"7"
+    },
+    {
+        "id":"7",
+        "title":"혼자같이",
+        "category":"WEBSITE",
+        "thumbnail":"/img/work/work7.png",
+        "banner":"/img/work/banner07.png",
+        "video":"/img/work/erunjrun.mp4",
+        "introduction":"자취생들을 위한 sns입니다.",
+        "github":"https://github.com/Daun1309/react_mini/tree/seayoung/mini",
+        "icon":["/img/work/react.png","/img/work/redux.png","/img/work/sc.png"],
+        "dataD":[
+            {"number":["01","02"]},
+            {"subheading":["JWT","이미지 업로드"]},
+            {"detail":["JWT인증 방식으로 회원가입, 로그인, 로그아웃을 구현하였습니다."," Base64로 인코딩을 하고, accept를 이용해 jpg, jpeg, png, gif만 업로드 할 수 있도록 하였습니다."]}
+        ],
+        "before":"6",
+        "next":"1"
+    }
+  ]

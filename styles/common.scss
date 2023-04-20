@@ -1,0 +1,60 @@
+//초기화 css
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$width: calc(100% - 12%);
+
+body, html, p ,main, input, b, a, ul, li, div, h1, h2, button,
+h4, h5, h6, section, article, span, img{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+//scrollbar
+body::-webkit-scrollbar {
+  width: 10px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 10vh; /* 스크롤바의 길이 */
+  background: #96AEFE; /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffff;  /*스크롤바 뒷 배경 색상*/
+}
+
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+ul, li{
+    list-style: none;
+}
+
+html { font-size:16px; }
+
+//header
+nav.header{
+  width: $width;
+  height: 90px;
+  border-bottom: 2px solid #000;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  div.nav-menu{
+    display: inline;
+    a{
+      margin: 0px 15px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}
