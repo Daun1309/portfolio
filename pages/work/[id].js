@@ -32,24 +32,32 @@ const Work = ({data}) => {
 
           <video autoPlay controls loop muted src={data[0].video}/>
 
-          <div className={styles.details01}>
+          <div className={styles.borderTop}></div>
 
+          <div className={styles.details01}>
             {
               data &&
               data[0].dataD[0].number.map((n, key) => (
                 <div className={styles.details02} key={key}>
                   <b>{n}</b>
-                  {data[0].dataD[1].subheading.map((s, subKey) => (
-                    <p key={subKey} className={styles.detailsP}>{s}</p>
-                  ))}
-                  <p className={styles.detailsT}>
-                    전체 게시글을 조회할 때 고화질의 이미지가 많이 사용되다보니 속도가 저하되는 문제가 발생하였습니다. 
-                    이 문제를 해결하기 위해 이미지를 리사이징하고 레이지 로딩을 적용시켜 속도 저하문제를 해결하였습니다.
-                  </p>
+                  <p  className={styles.detailsP}>{data[0].dataD[1].subheading[key]}</p>
+                  <p className={styles.detailsT}>{data[0].dataD[2].detail[key]}</p>
                 </div>
               ))
             }
-            
+          </div>
+
+          <div className={styles.borderTop}></div>
+
+          <div className={styles.next}>
+            <Link className={styles.github} href={data[0].before}>
+              <Image src="/img/work/arrowW.svg" alt='' width={27} height={27}/>  
+              <p>이전 프로젝트보기</p>
+            </Link>
+            <Link className={styles.github} href={data[0].next}>
+              <p>다음 프로젝트보기</p>
+              <Image src="/img/work/arrowW.svg" alt='' width={27} height={27}/>  
+            </Link>
           </div>
       </section>
 

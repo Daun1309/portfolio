@@ -86,6 +86,28 @@ div.canvasContainer{
         left: 54%;
         position: absolute;
         top: 560px;
+        div{
+            display: flex;
+            align-items: center;
+            div{
+                margin:0px 30px 0px 10px;
+                width: 4px;
+                height: 30px;
+                background-color: #150945;
+                animation: spin 3s infinite;
+                transform-origin: center;
+                animation-timing-function: steps(2);
+            }
+            .toolT{
+                margin:0px 30px 0px 10px;
+                width: 4px;
+                height: 30px;
+                background-color: #150945;
+                animation: spinn 3s infinite;
+                transform-origin: center;
+                animation-timing-function: steps(2);
+            }
+        }
         b{
             font-size: 38px;
             color: #11043a;
@@ -99,7 +121,30 @@ div.canvasContainer{
 }
 
 
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
 
+
+@keyframes spinn {
+    0% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(450deg);
+    }
+}
 
 
 

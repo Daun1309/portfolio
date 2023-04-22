@@ -46,15 +46,24 @@ const About = () => {
             <RotateCanvas/>
             <Image className={styles.water} src="/img/water.png" alt='' width={1920} height={1220}/>
             <div className={styles.tool}>
-                <b>Programming Languages</b>
+                <div>
+                    <div></div>
+                    <b>Programming Languages</b>
+                </div>
                 <p>
                     HTML  JS   React   Next  CSS     SASS    Styled Components
                 </p>
-                <b>Tool</b>
+                <div>
+                    <div className={styles.toolT}></div>
+                    <b>Tool</b>
+                </div>
                 <p>
                     Github    Notion    Slack    VScode
                 </p>
-                <b>Design</b>
+                <div>
+                    <div></div>
+                    <b>Design</b>
+                </div>
                 <p>
                     illustrator   Photoshop    Figma
                 </p>

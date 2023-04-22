@@ -58,6 +58,12 @@ section.guest{
             top: 0;
             width: 200px;
             height: 280px;
+            background: url("../public/img/send.png") no-repeat right 50% center / 50px auto;
+            transition: 400ms;
+            
+            &:hover{
+                background-color: #a7baff;
+            }
         }
     }
 
@@ -96,6 +102,8 @@ section.guest{
                         background-color: transparent;
                         border: none;
                         font-weight: 600;
+                        margin-left: 11px;
+                        transition: 200ms;
                         cursor: pointer;
                         &:hover{
                             background-color: #000;
