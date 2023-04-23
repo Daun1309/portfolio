@@ -42,8 +42,9 @@ html { font-size:16px; }
 //header
 nav.header{
   width: $width;
-  height: 90px;
-  border-bottom: 2px solid #000;
+  // height: 90px;
+  // border-bottom: 2px solid #000;
+  padding-top: 20px;
   margin: 0px auto;
   display: flex;
   align-items: center;
@@ -54,15 +55,21 @@ nav.header{
   transform: translateX(-50%);
   transition: top 0.2s ease-in-out;
   z-index: 1000;
-
+  .menuBox{
+    display: flex;
+    align-items: center;
+  }
   // backdrop-filter: blur(90px);
   // background-color: rgba(255, 255, 255, 0.057);
   div.nav-menu{
     display: inline;
     a{
       margin: 0px 15px;
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 600;
+      &:hover{
+        color: #3a56b3;
+      }
     }
   }
 }

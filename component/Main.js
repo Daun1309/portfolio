@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styles from '@/styles/main.module.scss'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,6 +10,13 @@ const Main = () => {
   const layerRef2 = useRef(null);
   const layerRef3 = useRef(null);
   const layerRef4 = useRef(null);
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 1000);
+  }
 
   useEffect(() => {
     const container = containerRef.current;
@@ -63,13 +70,13 @@ const Main = () => {
               <Image src="/img/arrow.png" alt='' width={16} height={16}/>
             </div>
           </Link>
-          <Link href={"https://github.com/Daun1309"} target="_blank">
-            <div className={styles.contact3}>
-              <Image src="/img/email.png" alt='' width={25} height={25}/>
-              <p>daun1309@gmail.com</p>
-              <Image src="/img/arrow.png" alt='' width={16} height={16}/>
-            </div>
-          </Link>
+          <div className={styles.contact3}>
+            <Image src="/img/email.png" alt='' width={25} height={25} />
+            <p onClick={() => copyToClipboard('daun1309@gmail.com')}>
+              {isCopied ? 'copied ! ' : 'daun1309@gmail.com'}
+            </p>
+            <Image src="/img/arrow.png" alt='' width={16} height={16} />
+          </div>
         </div>
     </section>
   )

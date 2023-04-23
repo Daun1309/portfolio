@@ -10,6 +10,9 @@ const Work = ({data}) => {
   return (
     
     <div>
+      <Link className={styles.home} href="/#work" >
+        <Image src="/img/home.svg" alt='' width={160} height={58}/>  
+      </Link>
       <section className={styles.detail}>
         <Image className={styles.bannerImg} src={data[0].banner} alt='' width={1920} height={869}/>  
         <Link className={styles.github} href={data[0].github} target="_blank" >
@@ -74,8 +77,8 @@ export default Work
 
 export async function getServerSideProps({ params }) {
 console.log(params.id)
-    // const res = await axios.get(`http://localhost:3000/api/url/${params.id}`);
-    const res = await axios.get(`https://portfolio-a5gc5jtws-daun1309.vercel.app//api/url/${params.id}`);
+    const res = await axios.get(`http://localhost:3000/api/url/${params.id}`);
+    // const res = await axios.get(`https://portfolio-a5gc5jtws-daun1309.vercel.app//api/url/${params.id}`);
     const data = res.data;
   
     return {

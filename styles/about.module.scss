@@ -61,7 +61,7 @@ section.about{
             font-size: 100px;
         }
         p.doT{
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 500;
             color: #161616;
             margin-top: 20px;
@@ -74,16 +74,16 @@ section.about{
             font-weight: 800;
             margin-bottom: 20px;
             position: relative;
-            &::after{
-                content: "";
-                width: 400px;
-                height: 1px;
-                background-color: #000;
-                position: absolute;
-                top: 50%;
-                left: 370px;
-                transform: translate(-50%, -50%);
-            }
+            // &::after{
+            //     content: "";
+            //     width: 400px;
+            //     height: 1px;
+            //     background-color: #000;
+            //     position: absolute;
+            //     top: 50%;
+            //     left: 370px;
+            //     transform: translate(-50%, -50%);
+            // }
         }
         p.educationP{
             padding: 15px 0px 200px 0px; 
