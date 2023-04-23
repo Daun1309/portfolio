@@ -11,7 +11,7 @@
         "icon":["/img/work/next.png","/img/work/fabric.png","/img/work/context.png","/img/work/mysql.png","/img/work/db.png","/img/work/sass.png","/img/work/vercel.png","/img/work/sweet.png"],
         "dataD":[
             {"number":["01","02","03","04"]},
-            {"subheading":["canvas로 이미지 꾸미기","좋아요","CRUD","OpenWeatherMap API"]},
+            {"subheading":["canvas로 이미지 꾸미기","게시글 좋아요 버튼","CRUD","OpenWeatherMap API"]},
             {"detail":["Canvas Library인 Fabric.js를 사용헤서 이미지를 불러와 브러쉬와 스티커로 사진을 꾸미고 이미지를 저장할 수 있는 기능을 구현하였습니다.","각 게시글의 id와 회원정보, boolean값을 저장해서 좋아요 기능을 구현하였습니다. ","mysql, MariaDB를 사용해서 데이터를 저장, 수정, 삭제하고 context를 사용해 전역에서 데이터를 자유롭게 사용할 수 있도록 하였습니다.","OpenWeatherMap API를 사용해 현재 날씨정보를 제공하였습니다."]}
         ],
         "before":"7",

@@ -30,6 +30,7 @@ const About = () => {
                     이 슬로건처럼 새로운 기술과 시도를 두려워하지 않고
                     도전하며 끊임없이 성장하는 프론트엔드 개발자가 되겠습니다.
                 </p>
+                <Image src="/img/education.png" alt='' width={30} height={30}/>
                 <p className={styles.education}>Education</p>
                 <p>22.11 - 23.04 그림컴퓨터아카데미(감남) 프론트엔드 웹&앱 SW개발자 양성과정</p>
                 <p className={styles.educationP}>22.03 - 22.06 스파르타코딩클럽 항해99 6기</p>

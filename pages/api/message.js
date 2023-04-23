@@ -27,8 +27,6 @@ export default async function handler(req, res){
     const updateData = async () => {
         try{
             let { name, password, text, id } = body;
-            console.log(body)
-            console.log("수정")
             let data = await executeQuery(
             'update message set name=?, password=?,text=? where id=?',
             [name, password, text, body.id]

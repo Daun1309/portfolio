@@ -8,10 +8,10 @@ const Message = () => {
 
   const { message, messageFun } = useContext(DbContext);
 
-  const sortMessage = message.sort((prev, cur) => {
-    if(prev.id < cur.id) return 1;
-    if(prev.id > cur.id) return -1;
-  });
+  // const sortMessage = message.sort((prev, cur) => {
+  //   if(prev.id < cur.id) return 1;
+  //   if(prev.id > cur.id) return -1;
+  // });
 
   const sampleTimestamp = Date.now();
   const date = new Date(sampleTimestamp); 
@@ -28,10 +28,10 @@ const Message = () => {
   const [password, setPassword] = useState("");
   const [showList, setShowList] = useState([]);
 
-  useEffect(() => {
-    // showList 초기화
-    setShowList(sortMessage.map((obj) => false));
-  }, [sortMessage]);
+  // useEffect(() => {
+  //   // showList 초기화
+  //   setShowList(sortMessage.map((obj) => false));
+  // }, [sortMessage]);
   
   const valueChange = (e) => {
     let t = e.target;
@@ -131,7 +131,7 @@ const Message = () => {
 
         <div className={styles.messageContainer}>
           {
-             sortMessage &&  sortMessage.map((obj, index) => ( 
+             message &&  message.map((obj, index) => ( 
               <div key={obj.id} className={styles.messageBox}>
                 <div className={styles.MBox}>
                   <div className={styles.ND}>
@@ -167,7 +167,7 @@ const Message = () => {
               </div>
             ))
           }
-          c
+       
         </div>
     </section>
   )
