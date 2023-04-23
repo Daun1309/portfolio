@@ -39,39 +39,41 @@ const Message = () => {
       return {...obj, [t.name] : t.value}
     })
   }
-
-  const create = (e) => {
+  
+  const create = async (e) => {
     e.preventDefault();
-    axios.post("/api/message", {...inputValue, id:Date.now().toString(), date:returnDate })
+    await axios.post("/api/message", {...inputValue, id:Date.now().toString(), date:returnDate });
     setValue(initial);
-    messageGet();
+    await messageGet();
   } 
-
+  
   function messageEdit(id){
     const m =  message.find(obj => obj.id === id);
     setValue(m);
     setEditingId(id);
   }
   
-  function edit(e){
+  const edit = async (e) => {
     e.preventDefault();
-    axios.put("api/message",{ ...inputValue, id: editingId});
+    await axios.put("api/message",{ ...inputValue, id: editingId});
     setEditingId(null);
     setValue(initial);
-    messageGet();
+    await messageGet();
   }
-
+  
   function messageDelete(id){
     axios.delete("api/message",{data : id});
     messageGet();
   }
-
-  function messageGet() {
-    messageFun('get')
+  
+  const messageGet = async () => {
+    await messageFun('get');
   }
-
-  useEffect(messageGet,[])
-
+  
+  useEffect(() => {
+    messageGet();
+  },[])
+  
   function ccc(obj) {
     setPassword("")
     if (obj.password === password) {
@@ -83,6 +85,7 @@ const Message = () => {
       alert("비밀번호가 틀렸습니다.");
     }
   }
+  
 
   return (
     <section id='message' className={styles.guest}>
