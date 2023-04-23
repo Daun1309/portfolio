@@ -26,30 +26,20 @@ const Message = () => {
   const [inputValue, setValue] = useState(initial);
   const [editingId, setEditingId] = useState(null);
   const [password, setPassword] = useState("");
-  const [showModal, setShowModal] = useState(false);
+  const [showList, setShowList] = useState([]);
 
-  function passwordCheck() {
-    setShowModal(true);
-  }
-
-  function closeModal() {
-    setShowModal(false);
-  }
-
-  // function confirmPassword() {
-  //   if (password === inputValue.password) {
-  //     setShowModal(false);
-  //   } else {
-  //     alert("비밀번호가 틀렸습니다.");
-  //   }
-  // }
-
+  useEffect(() => {
+    // showList 초기화
+    setShowList(sortMessage.map((obj) => false));
+  }, [sortMessage]);
+  
   const valueChange = (e) => {
     let t = e.target;
     setValue((obj) => {
       return {...obj, [t.name] : t.value}
     })
   }
+
   const create = (e) => {
     e.preventDefault();
     axios.post("/api/message", {...inputValue, id:Date.now().toString(), date:returnDate })
@@ -57,12 +47,10 @@ const Message = () => {
     messageGet();
   } 
 
-
   function messageEdit(id){
     const m =  message.find(obj => obj.id === id);
     setValue(m);
     setEditingId(id);
-    passwordCheck();
   }
   
   function edit(e){
@@ -76,7 +64,6 @@ const Message = () => {
   function messageDelete(id){
     axios.delete("api/message",{data : id});
     messageGet();
-    passwordCheck();
   }
 
   function messageGet() {
@@ -85,14 +72,22 @@ const Message = () => {
 
   useEffect(messageGet,[])
 
+  function ccc(obj) {
+    setPassword("")
+    if (obj.password === password) {
+      const index = sortMessage.findIndex((item) => item.id === obj.id);
+      const newShowList = [...showList];
+      newShowList[index] = true;
+      setShowList(newShowList);
+    } else {
+      alert("비밀번호가 틀렸습니다.");
+    }
+  }
 
   return (
     <section id='message' className={styles.guest}>
-
         <div className={styles.line}></div>
-
         <h2>MESSAGE</h2>
-
         <form onSubmit={editingId !== null ? edit : create} className={styles.form}>
           <div className={styles.inputContainer}>
             <input 
@@ -127,35 +122,13 @@ const Message = () => {
             className={styles.inputSubmit} 
             type='submit'
             value=""
-          >
-            {/* <span></span> */}
-            </input>
-        </form>
+          />
 
-        {/* {
-          showModal && (
-          <div className={styles.modal}>
-            <div className={styles.modalContent}>
-              <span className={styles.close} onClick={closeModal}>
-                &times;
-              </span>
-              <h2>비밀번호 확인</h2>
-              <input
-                className={styles.modalInput}
-                type="password"
-                placeholder="비밀번호를 입력하세요"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <button onClick={confirmPassword}>확인</button>
-            </div>
-          </div>
-        )
-        } */}
+        </form>
 
         <div className={styles.messageContainer}>
           {
-             sortMessage &&  sortMessage.map((obj) => ( 
+             sortMessage &&  sortMessage.map((obj, index) => ( 
               <div key={obj.id} className={styles.messageBox}>
                 <div className={styles.MBox}>
                   <div className={styles.ND}>
@@ -163,8 +136,28 @@ const Message = () => {
                     <p>{obj.date}</p>
                   </div>
                   <div className={styles.B}>
-                    <button onClick={()=> {messageEdit(obj.id); passwordCheck()}}>수정</button>
-                    <button onClick={()=> {messageDelete(obj.id); passwordCheck()}}>삭제</button>
+                    {
+                      showList[index] || (
+                        <>
+                          <input
+                            className={styles.passwordInput}
+                            type="password"
+                            placeholder="비밀번호를 입력해주세요"
+                            required
+                            onChange={(e) => setPassword(e.target.value)}
+                          />
+                          <button onClick={()=> {ccc(obj)}}>확인</button>
+                        </>
+                      )
+                    }
+                    {
+                      showList[index] && (
+                        <>
+                          <button onClick={() => {messageEdit(obj.id)}}>수정</button>
+                          <button onClick={() => {messageDelete(obj.id)}}>삭제</button>
+                        </>
+                      )
+                    }
                   </div>
                 </div>
                 <p className={styles.messageText}>{obj.text}</p>

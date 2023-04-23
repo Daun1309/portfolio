@@ -44,7 +44,7 @@ section.about{
         }
         .qrT{
             margin: 25px 0px 10px 0px;
-            font-weight: 600;
+            font-weight: 500;
         }
         .qr{
             border: 1.5px solid #000000;
@@ -54,7 +54,7 @@ section.about{
     div.doIt{
         position: sticky;
         width: 100%;
-        top: 350px;
+        top: 250px;
         padding-left: 40%;
         z-index: 10;
         b{
@@ -63,9 +63,30 @@ section.about{
         p.doT{
             font-size: 22px;
             font-weight: 500;
-            color: #474747;
+            color: #161616;
             margin-top: 20px;
             padding-bottom: 100px;
+            width: 70%;
+            line-height: 40px;
+        }
+        p.education{
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            &::after{
+                content: "";
+                width: 400px;
+                height: 1px;
+                background-color: #000;
+                position: absolute;
+                top: 50%;
+                left: 370px;
+                transform: translate(-50%, -50%);
+            }
+        }
+        p.educationP{
+            padding: 15px 0px 200px 0px; 
         }
     }
 }
@@ -75,6 +96,9 @@ section.about{
     flex-direction: column;
     position: relative;
     align-items: flex-end;
+    img:nth-child(1){
+        margin-top: -900px;
+    }
     img:nth-child(2), img:nth-child(3){
         margin-top: 480px;
     }

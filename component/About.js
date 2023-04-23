@@ -26,13 +26,13 @@ const About = () => {
             <div className={styles.doIt}>
                 <b> JUST DO IT. </b>
                 <p className={styles.doT}>
-                    나이키의 슬로건 Just Do It 은 제가 가장 좋아하는 말 입니다.
-                    이 말처럼 새로운 기술과 시도를 두려워하지 않고
+                    나이키의 슬로건 Just Do It 은 제가 가장 좋아하는 말 입니다.<br/>
+                    이 슬로건처럼 새로운 기술과 시도를 두려워하지 않고
                     도전하며 끊임없이 성장하는 프론트엔드 개발자가 되겠습니다.
                 </p>
-                <p>Education</p>
+                <p className={styles.education}>Education</p>
                 <p>22.11 - 23.04 그림컴퓨터아카데미(감남) 프론트엔드 웹&앱 SW개발자 양성과정</p>
-                <p>22.03 - 22.06 스파르타코딩클럽 항해99 6기</p>
+                <p className={styles.educationP}>22.03 - 22.06 스파르타코딩클럽 항해99 6기</p>
             </div>
 
             <div className={styles.M}>
@@ -46,22 +46,19 @@ const About = () => {
             <RotateCanvas/>
             <Image className={styles.water} src="/img/water.png" alt='' width={1920} height={1220}/>
             <div className={styles.tool}>
-                <div>
-                    <div></div>
+                <div> 
                     <b>Programming Languages</b>
                 </div>
                 <p>
                     HTML  JS   React   Next  CSS     SASS    Styled Components
                 </p>
                 <div>
-                    <div className={styles.toolT}></div>
                     <b>Tool</b>
                 </div>
                 <p>
                     Github    Notion    Slack    VScode
                 </p>
                 <div>
-                    <div></div>
                     <b>Design</b>
                 </div>
                 <p>
