@@ -3,7 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Header = () => {
+
   return (
+  <>
     <nav className='header'>
         <Link href="/">
             <Image src="/img/logo.png" alt='' width={52} height={61}/>
@@ -14,6 +16,7 @@ const Header = () => {
             <Link href="#message">MESSAGE</Link>
         </div>
     </nav>
+  </>
   )
 }
 

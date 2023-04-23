@@ -8,6 +8,7 @@ const Work = ({data}) => {
 
   console.log(data)
   return (
+    
     <div>
       <section className={styles.detail}>
         <Image className={styles.bannerImg} src={data[0].banner} alt='' width={1920} height={869}/>  
@@ -29,8 +30,10 @@ const Work = ({data}) => {
       </section>
 
       <section className={styles.details}>
-
-          <video autoPlay controls loop muted src={data[0].video}/>
+          {
+            data[0].video &&
+            <video autoPlay controls loop muted src={data[0].video}/>
+          }
 
           <div className={styles.borderTop}></div>
 
@@ -50,13 +53,13 @@ const Work = ({data}) => {
           <div className={styles.borderTop}></div>
 
           <div className={styles.next}>
-            <Link className={styles.github} href={data[0].before}>
-              <Image src="/img/work/arrowW.svg" alt='' width={27} height={27}/>  
+            <Link href={data[0].before}>
+              <Image src="/img/work/nextBtn.png" alt='' width={15} height={27}/>  
               <p>이전 프로젝트보기</p>
             </Link>
-            <Link className={styles.github} href={data[0].next}>
+            <Link className={styles.nextBtn} href={data[0].next}>
               <p>다음 프로젝트보기</p>
-              <Image src="/img/work/arrowW.svg" alt='' width={27} height={27}/>  
+              <Image src="/img/work/nextBtn.png" alt='' width={15} height={27}/>  
             </Link>
           </div>
       </section>
@@ -68,21 +71,6 @@ const Work = ({data}) => {
 export default Work
 
 
-
-
-
-
-
-
-// export async function getStaticPaths() {
-//   // const res = await axios.get('http://localhost:3000/api');
-//   // const data = res.data.map((obj) => ({ params: { id: obj.id.toString() } }));
-//   // console.log(data)
-//   return {
-//     paths: [{params:{ id: '1' }},{params:{ id: '2' }}],
-//     fallback: false,
-//   };
-// }
 
 export async function getServerSideProps({ params }) {
 console.log(params.id)

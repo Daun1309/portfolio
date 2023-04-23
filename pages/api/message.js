@@ -1,39 +1,57 @@
-const fs = require("fs").promises;
-let db = require("data/message.json");
+import { executeQuery } from './db';
+
 
 export default async function handler(req, res){
 
     const {method, body} = req;
 
+    const seletData = async () => {
+        try {
+            let data = await executeQuery('select * from message order by id DESC', []);
+            res.json(data);
+        } catch (err) {
+            res.send(err);
+        }
+    }
+
+    const insertData = async () => {
+        let {id, name, password, date, text} = body;
+        console.log(body)
+        let data = await executeQuery(
+          'insert into message (id, name, password, date, text) value (?,?,?,?,?)',
+          [id, name, password, date, text]
+        );
+        res.json(data)
+    }
+
+    const updateData = async () => {
+        try{
+            let { name, password, text, id } = body;
+            console.log(body)
+            console.log("수정")
+            let data = await executeQuery(
+            'update message set name=?, password=?,text=? where id=?',
+            [name, password, text, body.id]
+            )
+            res.json(data)
+        }catch(err){
+            res.send(err);
+        }
+    }
+
+    const deleteData = async () => {
+        let {id} = body;
+        let data = await executeQuery(
+          'delete from message where id=?', [body]
+        )
+        res.json(data);
+    }
+    
     switch(method){
-        case "GET" : dataGet(); break;
-        case "POST" : await dataCreate(); break;
-        case "PUT" : await dataUpdate(); break;
-        case "DELETE" : await dataDelete(); break;
+        case "GET" : seletData(); break;
+        case "POST" : await insertData(); break;
+        case "PUT" : await updateData(); break;
+        case "DELETE" : await deleteData(); break;
     }
 
-    async function dataCreate(){
-        db.push(body);
-        await saveData();
-    }
-
-    function dataGet(){
-        res.status(200).json(db)
-    }
-
-    async function dataUpdate(){
-        let user = db.find(obj => obj.id == body.id);
-        Object.assign(user, body);
-        await saveData();
-    }
-
-    async function dataDelete(){
-        db = db.filter(obj => obj.id !== body);
-        await saveData();
-    }
-
-    async function saveData(){
-        await fs.writeFile("data/message.json", JSON.stringify(db));
-        res.status(200).json(db);
-    }
 }

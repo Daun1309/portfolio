@@ -127,7 +127,7 @@ section.details{
     }
     .details01{
         width: 75%;
-        margin: 0px auto;
+        margin: 0px auto 200px auto;
         height: auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(47%, max-content));
@@ -136,7 +136,7 @@ section.details{
         padding: initial;
 
         .details02{
-            padding: 50px 0px 0px 50px;
+            padding: 70px 0px 0px 50px;
             width: 95%;
             b{
                 font-weight: 900;
