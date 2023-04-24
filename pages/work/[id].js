@@ -5,8 +5,6 @@ import styles from '@/styles/work.module.scss'
 import Link from 'next/link';
 
 const Work = ({data}) => {
-
-  console.log(data)
   return (
     
     <div>
@@ -76,7 +74,6 @@ export default Work
 
 
 export async function getServerSideProps({ params }) {
-console.log(params.id)
     //const res = await axios.get(`http://localhost:3000/api/url/${params.id}`);
      const res = await axios.get(`https://portfolio-murex-six-66.vercel.app/api/url/${params.id}`);
     const data = res.data;
